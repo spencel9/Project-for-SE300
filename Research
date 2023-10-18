@@ -1,0 +1,12 @@
+Research for creating the map on Python: 
+Plotly for making maps (scatter maps) (plotly.com)
+Mapping with Shapefile, download needed (Towardsdatascience.com)
+
+Research on how to implement APIs:
+An API, or Application Programming Interface, is a server that you can use to retrieve and send data to using code.
+In order to work with APIs in Python, we need tools that will make requests. In Python, the most common 
+library for making requests and working with APIs is the requests library. 
+The requests library isn’t part of the standard Python library, so you’ll need to install it to get started.
+
+response = requests.get("https://api.open-notify.org/this-api-doesnt-exist")
+

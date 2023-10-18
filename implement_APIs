@@ -1,5 +1,42 @@
-//here is where I implement the APIs
+#here is where I implement the APIs
 
-pip install requests //install the library for making HTTP requests
+pip install requests #install the library for making HTTP requests
 
-import requests //import the libraries you'll be using
+import requests
+
+# Replace 'YOUR_API_KEY' with the actual API key you obtained.
+api_key = 'YOUR_API_KEY'
+
+# Set the base URL for the Crimeometer API.
+base_url = 'https://www.crimeometer.com/crime-map-api'
+
+# Define the specific API endpoint you want to access.
+endpoint = '/your-desired-endpoint'  # Replace with the actual endpoint from the documentation.
+
+# Compose the complete URL for the API request.
+url = base_url + endpoint
+
+# Define any required parameters as a dictionary.
+params = {
+    'param1': 'value1',
+    'param2': 'value2',
+    # Add any required parameters specified in the API documentation.
+}
+
+# Include your API key in the headers.
+headers = {
+    'Authorization': f'Bearer {api_key}'
+}
+
+# Make the GET request to the API.
+response = requests.get(url, params=params, headers=headers)
+
+# Check the status code and process the response.
+if response.status_code == 200:
+    data = response.json()
+    # Process the data as needed.
+else:
+    print(f"Request failed with status code {response.status_code}")
+
+
+

@@ -10,3 +10,28 @@ The requests library isn’t part of the standard Python library, so you’ll ne
 
 response = requests.get("https://api.open-notify.org/this-api-doesnt-exist")
 
+For Zillow API: 
+
+import requests
+url = "https://zillowdimashirokovv1.p.rapidapi.com/GetSearchResults.htm"
+payload = "rentzestimate=true&rentzestimate=false&zws-id=<YOUR ZILLOW ID>&citystatezip=97525&address=583-N-5th-Ave-Gold-Hill-OR"
+headers = {
+    'x-rapidapi-host': "ZillowdimashirokovV1.p.rapidapi.com",
+    'x-rapidapi-key': "YOUR RAPID API KEY",
+    'content-type': "application/x-www-form-urlencoded"
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+
+getChart returns an HTML chart comprised of images and property data. 
+getComps returns a list of recent, similar sales for a property.
+getDeepComps returns a list of recent, deeply similar sales for a property.
+getDeepSearchResults returns property for a given address.
+getRegionChildren returns a list of regions that exist within the “parent” region provided in the request.
+getSearchResults returns property for a given address.
+getUpdatedPropertyDetails returns the most recently updated details provided by the homeowner.
+getZestimate returns Zillow’s estimated values related to a given property (where exists).
+
+API for apartments.com:
+https://rapidapi.com/ptwebsolution/api/apartments-com
+url: 'https://apartments-com.p.rapidapi.com/typeahead'

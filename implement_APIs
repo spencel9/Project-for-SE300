@@ -1,1 +1,5 @@
 //here is where I implement the APIs
+
+pip install requests //install the library for making HTTP requests
+
+import requests //import the libraries you'll be using

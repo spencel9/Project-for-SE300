@@ -1,1 +1,17 @@
+# Import packages
+import pandas as pd
+import folium
+from folium.plugins import MarkerCluster
+import geopandas as gpd
+from shapely.geometry import Point, LineString
+from shapely import wkt
 
+#Specify the coordinate reference system (CRS)
+crs = 4386
+
+#Load the basin data
+basin_data = pd.read_csv('./data/basin_data/csv', sep = ',', index_col=0)
+
+# Convert to a geodDataFrame and geometry objects
+basin_data['geometry'] = basin)data['geometry'].apply(wkt.loads)
+geodata = gpd.GeoDataFram(basin_data, crs = crs)

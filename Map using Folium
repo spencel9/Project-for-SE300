@@ -1,17 +1,13 @@
-# Import packages
-import pandas as pd
 import folium
-from folium.plugins import MarkerCluster
-import geopandas as gpd
-from shapely.geometry import Point, LineString
-from shapely import wkt
 
-#Specify the coordinate reference system (CRS)
-crs = 4386
+# Create a map object with an initial location (latitude and longitude)
+m = folium.Map(location=[29.1917, -81.0501], zoom_start=10)  # ERAU coordinates
 
-#Load the basin data
-basin_data = pd.read_csv('./data/basin_data/csv', sep = ',', index_col=0)
+# Add markers to the map
+folium.Marker([29.1917, -81.0501], tooltip='ERAU').add_to(m)
 
-# Convert to a geodDataFrame and geometry objects
-basin_data['geometry'] = basin)data['geometry'].apply(wkt.loads)
-geodata = gpd.GeoDataFram(basin_data, crs = crs)
+# Save the map to an HTML file
+m.save('basic_map3.html')
+
+# Display the map in your Jupyter Notebook
+m

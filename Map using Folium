@@ -1,13 +1,66 @@
 import folium
+from geopy.geocoders import Nominatim
+from geopy.distance import geodesic
+from folium.plugins import Geocoder
+from geopy.distance import great_circle
 
 # Create a map object with an initial location (latitude and longitude)
-m = folium.Map(location=[29.1917, -81.0501], zoom_start=10)  # ERAU coordinates
+m = folium.Map(location=[29.1899, -81.0488], zoom_start=10)  # ERAU coordinates
+Geocoder().add_to(m)
 
-# Add markers to the map
-folium.Marker([29.1917, -81.0501], tooltip='ERAU').add_to(m)
+# Create a feature group for each category of markers
+blue_markers = folium.FeatureGroup(name='Blue Markers')
+red_markers = folium.FeatureGroup(name='Red Markers')
+
+# Define custom icon colors and properties
+icon_blue = folium.Icon(color='blue', icon='cloud')
+icon_red = folium.Icon(color='red', icon='star')
+
+# Add markers to the map with custom icons
+erau_coords = (29.1899, -81.0488)
+new_york_coords = (40.7128, -74.0060)
+
+folium.Marker(erau_coords, tooltip='Embry-Riddle', icon=icon_blue).add_to(m)
+folium.Marker(new_york_coords, tooltip='New York City', icon=icon_red).add_to(m)
+
+
+# Define a custom search bar using HTML and JavaScript
+search_html = """
+<div style="position: fixed; 
+            top: 10px; right: 10px; 
+            background-color: white; padding: 10px; z-index: 9999;">
+  <input id="search" type="text" placeholder="Enter address" oninput="initAutocomplete()">
+</div>
+<script>
+
+map</script>
+"""
+
+# Define a custom legend using HTML
+legend_html = """
+<div style="position: fixed; 
+            bottom: 50px; left: 50px; 
+            border: 2px solid grey; z-index: 9999; 
+            background-color: white; padding: 10px;">
+  <strong>Legend</strong><br>
+  <i class="fa fa-map-marker fa-2x" style="color: blue"></i> Embry-Riddle<br>
+  <i class="fa fa-map-marker fa-2x" style="color: red"></i> New York City
+</div>
+"""
+
+# Add the custom search bar and legend to the map
+#m.get_root().html.add_child(folium.Element(search_html))
+m.get_root().html.add_child(folium.Element(legend_html))
+
+# Add the feature groups to the map
+m.add_child(blue_markers)
+m.add_child(red_markers)
+
+# Add a layer control to toggle markers
+folium.LayerControl().add_to(m)
 
 # Save the map to an HTML file
-m.save('basic_map3.html')
+m.save('map_1.2.html')
 
 # Display the map in your Jupyter Notebook
 m

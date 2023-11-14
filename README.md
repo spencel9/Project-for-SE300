@@ -1,7 +1,8 @@
 
 <h2>Safe Housing </h2>
 
-<strong>This project allows the user to search for housing and see the sexual offenders within the area.</strong>
+**Welcome!**
+**This project allows the user to search for housing and see the sexual offenders within the area.**
 
 With an interactive map, users may search through Volusia County to view housing, housing prices, and the sexual offenders in the 
 surrounding area. 
@@ -17,15 +18,23 @@ Downloads needed:
 
 
 <h3>Using the Map!</h3>
-To search for a known address use the search bar located in the upper right corner of the screen. If you arent sure of the full address, 
-we will help you find what you are looking for through our autocomplete possible matches. 
-If you dont have an address, you can pan and zoom around the map to find a desired area. Go ahead and click on this desired area and we 
-will show you living options in the area. 
-Once an address is input, you may choose a radius size. This radius will indicate sexual offenders and color coded pins will display the 
-type of crime without having to search for it. 
+To search for a known address use the search bar located in the upper right corner of the screen.  If you arent sure of the full address, 
+we will help you find what you are looking for through our autocomplete possible matches.  
+If you dont have an address, you can pan and zoom around the map to find a desired area.  Go ahead and click on this desired area and we 
+will show you living options in the area.  
+Once an address is input, you may choose a radius size.  This radius will indicate sexual offenders and color coded pins will display the 
+type of crime without having to search for it.  
 
-<h3>Extra Resources</h3>
+**Video of map usage will be here**
+<h3>Pins/Map Markers</h3>
+Pins will indicate a location on the map and will be color coded for sexual offender and their offenses.   
+Users can view more information about the sexual offender by hovering over the pin or clicking on the pin.  
 
+<h3>Databases</h3>
+Manual databases were made for this program and are maintained by the programers.  
+The sexual offender database was made using information found at <em>Volusia County Sexual Offender Registry</em>.   
+The <em>Zillow.com</em> and <em>Apartments.com</em> databases were used to make a comprised database of availablle housing (address and price).  
+When changes are made to any database, the "date of last update" is also changed.  
 
 
 

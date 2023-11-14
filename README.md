@@ -31,7 +31,8 @@ Pins will indicate a location on the map and will be color coded for sexual offe
 Users can view more information about the sexual offender by hovering over the pin or clicking on the pin.  
 
 <h3>Databases</h3>
-Manual databases were made for this program and are maintained by the programers.  
+While APIs were originally going to be used for data, we found that manual databases were more affordable. 
+Therefore,manual databases were made for this program and are maintained by the programers.  
 The sexual offender database was made using information found at <em>Volusia County Sexual Offender Registry</em>.   
 The <em>Zillow.com</em> and <em>Apartments.com</em> databases were used to make a comprised database of availablle housing (address and price).  
 When changes are made to any database, the "date of last update" is also changed.  

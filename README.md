@@ -14,8 +14,7 @@ their last known address, status, crime, and name.
 
 
 <h3>Getting Started</h3>
-Downloads needed:
-
+Downloads needed: The Folium package and Python
 
 <h3>Using the Map!</h3>
 To search for a known address use the search bar located in the upper right corner of the screen.  If you arent sure of the full address, 

@@ -19,12 +19,19 @@ Python 3 (any Python 3 version)
 Python Libraries needed: 
 
 import folium
+
 from geopy.geocoders import Nominatim
+
 from geopy.distance import geodesic
+
 from folium.plugins import Geocoder
+
 from geopy.distance import great_circle
+
 import os
+
 import fnmatch
+
 import pandas as pd
 
 <h3>Using the Map!</h3>

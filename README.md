@@ -18,19 +18,19 @@ Python 3 (any Python 3 version)
 
 Python Libraries needed: 
 
-import folium
+import folium,
 
-from geopy.geocoders import Nominatim
+from geopy.geocoders import Nominatim,
 
-from geopy.distance import geodesic
+from geopy.distance import geodesic,
 
-from folium.plugins import Geocoder
+from folium.plugins import Geocoder,
 
-from geopy.distance import great_circle
+from geopy.distance import great_circle,
 
-import os
+import os,
 
-import fnmatch
+import fnmatch,
 
 import pandas as pd
 

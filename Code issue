@@ -1,0 +1,239 @@
+import folium
+from geopy.geocoders import Nominatim
+from geopy.distance import geodesic
+from folium.plugins import Geocoder
+from geopy.distance import great_circle
+#import fnmatch
+#import pandas as pd
+
+# Create a map object with an initial location (latitude and longitude)
+m = folium.Map(location=[29.1899, -81.0488], zoom_start=10)  # ERAU coordinates
+Geocoder().add_to(m)
+
+# Create a feature group for each category of markers
+lightblue_markers = folium.FeatureGroup(name='Light Blue Markers')
+red_markers = folium.FeatureGroup(name='Red Markers')
+pink_markers = folium.FeatureGroup(name='Pink Markers')
+lightgreen_markers = folium.FeatureGroup(name='Light Green Markers')
+darkblue_markers = folium.FeatureGroup(name='Dark Blue Markers')                                     
+                                     
+
+# Define custom icon colors and properties
+icon_lightblue = folium.Icon(color='lightgreen', icon='cloud')
+icon_red = folium.Icon(color='red', icon='star')
+icon_pink = folium.Icon(color='pink')
+icon_lightgreen = folium.Icon(color='lightgreen')
+icon_darkblue = folium.Icon(color='darkblue')
+
+# Add markers to the map with custom icons
+erau_coords = (29.1899, -81.0488)
+new_york_coords = (40.7128, -74.0060)
+
+anderson_coords = (29.1987693, -81.0553745)
+baptiste_coords = (29.21481, -81.47469)
+booth_coords =(29.01187, -81.06329)
+brashear_coords =(29.013641, -81.13813)
+buckner_coords =(29.22465, -81.0079)
+caldwell_coords =(29.07009457, -81.24947405)
+carlson_coords =(28.85257643, -81.23583423)
+clarke_coords =(29.24104487, -81.03932316)
+coleman_coords =(29.07185543, -81.30889823)
+collins_coords =(29.13668841, -81.13846623)
+cottrell_coords =(29.06691049, -81.06669605)
+curry_coords =(29.19735995, -81.02573325)
+cvetanoski_coords=(29.25502436, -81.08372443)
+daddio_coords=(29.01950464, -80.93480615)
+davis_coords=(29.2314531, -81.01098133)
+dejesus_coords=(29.01950464, -80.93485979)
+demmer_coords=(29.04391117, -81.2895396)
+dimassino_coords=(29.25988799, -81.08394846)
+donovan_coords=(28.93353382, -81.30098782)
+dragon_coords=(29.16992315, -81.08727422)
+dunbar_coords=(28.85977872, -81.17326369)
+easley_coords=(29.195566701, -81.01541565)
+edwards_coords=(28.90783882, -81.17772135)
+eustace_coords=(29.13671403, -81.13842722)
+evans_coords=(29.12757265, -81.35792322)
+farrell_coords=(28.94833998, -80.9128022)
+ferebee_coords=(29.048004047682692, -81.29135641728213)
+figueroa_coords=(29.258342317441542, -81.08631983446784)
+freeman_d_coords=(29.019763349654056, -80.93447010379043)
+freeman_j_coords=(29.25340615004523, -81.08373984611045)
+galarza_cruz_coords=(29.001795144384868, -81.4320939326268)
+gerry_coords=(28.905050505401416, -80.8722089903018)
+glass_coords=(29.13947091089311, -81.13451846145763)
+mobley_coords=(29.23567491904889, -81.03760441912564)
+moore_coords=(29.065529007240727, -81.25103340563912)
+morgan_coords=(28.986506927845383, -80.92693010379163)
+morton_coords=(29.244595264104195, -81.06597913076774)
+mosley_coords=(29.067900212710146, -81.26326161913177)
+nisbett_coords=(28.87550430465179, -81.27820007495981)
+noel_coords=(29.23693205467014, -81.06485746145405)
+oleary_coords=(29.05131531340286, -81.24860283262505)
+
+
+folium.Marker(erau_coords, tooltip='Embry-Riddle', icon=icon_lightblue).add_to(m)
+folium.Marker(new_york_coords, tooltip='New York City', icon=icon_red).add_to(m)
+folium.Marker(anderson_coords, tooltip='Lee T. Anderson--Lewd or Lascivious Conduct', icon=icon_pink).add_to(m) 
+folium.Marker(baptiste_coords, tooltip='Dean Lucier Baptiste--Lewd or Lascvious Conduct', icon=icon_pink).add_to(pink_markers)
+folium.Marker(booth_coords, tooltip='Charles Edward Booth--Sexual Battery',icon=icon_red).add_to(red_markers)
+folium.Marker(brashear_coords, tooltip='Joseph M. Brashear--Lewd or Lascivious Conduct', icon=icon_pink).add_to(pink_markers)
+
+
+# Add Sex Offenders into the map
+
+oneil_coords=()
+ostrowski_coords=()
+painter_coords=()
+palmieri_coords=()
+peterseb_coords=()
+petty_coords=()
+plucinik_coords=()
+poole_coords=()
+powers_coords=()
+rainy_coords=()
+rhoades_coords=()
+robinson_coords=()
+rodriguez_coords=()
+rose_coords=()
+ross_coords=()
+roushley_coords=()
+sanchez_coords=()
+sharp_coords=()
+sharpley_coords=()
+sketers_coords=()
+sloss_coords=()
+smiley_coords=()
+solomon_coords=()
+soto_h_coords=()
+soto_j_coords=()
+stockmar_coords=()
+stoer_coords=()
+stoltzfus_coords=()
+stone_coords=()
+tatro_coords=()
+taylor_coords=()
+thompson_coords=()
+tillman_coords=()
+turner_coords=()
+viers_coords=()
+villa_a_coords=()
+villa_j_coords=()
+walsh_coords=()
+ward_j_coords=()
+ward_m_coords=()
+ward_s_coords=()
+warner_coords=()
+watson_coords=()
+weckesser_coords=()
+wheeler_coords=()
+witchel_coords=()
+williams_a_coords=()
+williams_d_coords=()
+wright_coords=()
+zielke_coords=()
+zimmerman_coords=()
+zuckerman_coords=()
+gonzalez_coords=()
+goodrich_coords=()
+greene_coords=()
+harms_coords=()
+harris_coords=()
+hernandez_coords=()
+hickley_coords=()
+hill_coords=()
+hogg_coords=()
+holy_coords=()
+hot_aling_coords=()
+how_coords=()
+jarvis_coords=()
+johnson_coords=()
+jones_coords=()
+klabbatz_coords=()
+lala_coords=()
+lashbrook_coords=()
+la_whon_coords=()
+littles_coords=()
+lucas_coords=()
+madison_coords=()
+malouin_coords=()
+mason_coords=()
+mcgee_coords=()
+mckendrick_coords=()
+messer_coords=()
+miller_coords=()
+
+
+
+# Define a custom search bar using HTML and JavaScript
+search_html = """
+<div style="position: fixed; 
+            top: 10px; right: 10px; 
+            background-color: white; padding: 10px; z-index: 9999;">
+  <input id="search" type="text" placeholder="Enter address" oninput="initAutocomplete()">
+</div>
+<script>
+
+map</script>
+"""
+
+# Define a custom legend using HTML
+legend_html = """
+<div style="position: fixed; 
+            bottom: 50px; left: 50px; 
+            border: 2px solid grey; z-index: 9999; 
+            background-color: white; padding: 10px;">
+  <strong>Legend</strong><br>
+  <i class="fa fa-map-marker fa-2x" style="color: lightblue"></i> Statutory Rape<br>
+  <i class="fa fa-map-marker fa-2x" style="color: red"></i> Sexual Battery<br>
+  <i class="fa fa-map-marker fa-2x" style="color: pink"></i> Lewd and Lascivious Conduct<br>
+  <i class="fa fa-map-marker fa-2x" style="color: lightgreen"></i> Posession of inappropriate photos/videos of minors<br>
+  <i class="fa fa-map-marker fa-2x" style="color: darkblue"></i> Sexual Predator or Unknown
+</div>
+"""
+# Define custom JavaScript code for radius selection
+radius_selection_js = """
+function onSearchResult(e) {
+    var radiusOptions = [1, 3, 5];
+    var radiusSelect = document.createElement('select');
+    radiusSelect.id = 'radiusSelect';
+    
+    for (var i = 0; i < radiusOptions.length; i++) {
+        var option = document.createElement('option');
+        option.value = radiusOptions[i];
+        option.text = radiusOptions[i] + ' miles';
+        radiusSelect.appendChild(option);
+    }
+    
+    radiusSelect.addEventListener('change', function() {
+        var selectedRadius = this.value;
+        alert('Selected Radius: ' + selectedRadius + ' miles');
+    });
+    
+    var searchControl = document.querySelector('.leaflet-control-search');
+    searchControl.appendChild(radiusSelect);
+}
+
+document.querySelector('.leaflet-control-search').addEventListener('search:locationfound', onSearchResult);
+"""
+
+# Add the custom search bar and legend to the map
+#m.get_root().html.add_child(folium.Element(search_html))
+m.get_root().html.add_child(folium.Element(legend_html))
+
+# Add the feature groups to the map
+m.add_child(lightblue_markers)
+m.add_child(red_markers)
+m.add_child(pink_markers)
+m.add_child(lightgreen_markers)
+m.add_child(darkblue_markers)
+
+# Add a layer control to toggle markers
+folium.LayerControl().add_to(m)
+
+# Save the map to an HTML file
+m.save('map_3.1.html')
+
+# Display the map in your Jupyter Notebook
+m
+
